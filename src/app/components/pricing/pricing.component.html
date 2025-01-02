@@ -1,74 +1,128 @@
 <!--Pricing Tables-->
-<section id="pricing" class="secondary-color text-center scrollto clearfix ">
+<section id="pricing" class="secondary-color text-center scrollto clearfix">
     <div class="row clearfix">
 
         <div class="section-heading">
             <h3>YOUR CHOICE</h3>
             <h2 class="section-title">We have the right package for you</h2>
-        </div>
-
-        <!--Pricing Block-->
-        <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.4s">
-            <div class="pricing-block-content">
-                <h3>Personal</h3>
-                <p class="pricing-sub">The standard version</p>
-                <div class="pricing">
-                    <div class="price"><span>$</span>19</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                </div>
+            <nav id="pricing">
+                <!--this isnt doing anything for css-->
                 <ul>
-                    <li>5 Downloads</li>
-                    <li>2 Extensions</li>
-                    <li>Tutorials</li>
-                    <li>Forum Support</li>
-                    <li>1 year free updates</li>
-                </ul>
-                <a href="#" class="button">BUY TODAY</a>
-            </div>
-        </div>
-        <!--End Pricing Block-->
+                    <li>
+                        <!--                         <a class="button" (click)="priceCategory.priceDetailCategory" accesskey="portaits" routerLink="/pricing/portraits" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Portraits</a>
+                    -->
+                        <input type="button" class="button" value="Portraits" (click)="pricingType(1)">
 
-        <!--Pricing Block-->
-        <div class="pricing-block featured col-3 wow fadeInUp" data-wow-delay="0.6s">
-            <div class="pricing-block-content">
-                <h3>Student</h3>
-                <p class="pricing-sub">Most popular choice</p>
-                <div class="pricing">
-                    <div class="price"><span>$</span>29</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                </div>
-                <ul>
-                    <li>15 Downloads</li>
-                    <li>5 Extensions</li>
-                    <li>Tutorials with Files</li>
-                    <li>Forum Support</li>
-                    <li>2 years free updates</li>
+                        <a class="button" (click)="pricingType(1)" routerLink="/pricing/portrait" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Portraits</a>
+                        <a class="button" (click)="pricingType(2)" routerLink="/pricing/engagement" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Engagements</a>
+                        <a class="button" (click)="pricingType(3)" routerLink="/pricing/event" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Speical Events</a>
+                        <a class="button" (click)="pricingType(4)" routerLink="/pricing/wedding" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Weddings</a>
+                        <a class="button" (click)="pricingType(5)" routerLink="/pricing/prints" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Landscape Prints</a>
+                    </li>
                 </ul>
-                <a href="#" class="button">BUY TODAY</a>
-            </div>
+            </nav>
         </div>
-        <!--End Pricing Block-->
+        <!--  <div >
+         <app-pricing-detail category='selectedCategory'></app-pricing-detail>
+     </div> -->
 
-        <!--Pricing Block-->
-        <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.8s">
-            <div class="pricing-block-content">
-                <h3>Business</h3>
-                <p class="pricing-sub">For the whole team</p>
-                <div class="pricing">
-                    <div class="price"><span>$</span>49</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+
+        <div>
+            @for (investmentPackage of selectedInvestmentPackages; track investmentPackage) {
+            <!--Pricing Block-->
+            <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="pricing-block-content">
+                    <h3>{{investmentPackage.title}}</h3>
+                    <p class="pricing-sub">The standard version</p>
+                    <div class="pricing">
+                        <div class="price">${{investmentPackage.cost}}</div>
+                        <p>{{investmentPackage.description}}</p>
+                    </div>
+                    <ul>
+                        <li>{{investmentPackage.photoCount}} Photos</li>
+                        <li>{{investmentPackage.timeline}} to process</li>
+                        <li>Tutorials</li>
+                        <li>Forum Support</li>
+                        <li>1 year free updates</li>
+                    </ul>
+                    <a href="#" class="button">BUY TODAY</a>
                 </div>
-                <ul>
-                    <li>Unlimited Downloads</li>
-                    <li>Unlimited Extensions</li>
-                    <li>HD Video Tutorials</li>
-                    <li>Chat Support</li>
-                    <li>Lifetime free updates</li>
-                </ul>
-                <a href="#" class="button">BUY TODAY</a>
             </div>
+            <!--End Pricing Block-->
+            }
+
+
         </div>
-        <!--End Pricing Block-->
+        <!-- <div> -->
+        <!--     @switch (selectedCategory) { -->
+        <!--     @case ('portrait') { -->
+        <!--     <!--Pricing Block-->
+        <!--     <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.4s"> -->
+        <!--         <div class="pricing-block-content"> -->
+        <!--             <h3>Personal</h3> -->
+        <!--             <p class="pricing-sub">The standard version</p> -->
+        <!--             <div class="pricing"> -->
+        <!--                 <div class="price"><span>$</span>19</div> -->
+        <!--                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
+        <!--             </div> -->
+        <!--             <ul> -->
+        <!--                 <li>5 Downloads</li> -->
+        <!--                 <li>2 Extensions</li> -->
+        <!--                 <li>Tutorials</li> -->
+        <!--                 <li>Forum Support</li> -->
+        <!--                 <li>1 year free updates</li> -->
+        <!--             </ul> -->
+        <!--             <a href="#" class="button">BUY TODAY</a> -->
+        <!--         </div> -->
+        <!--     </div> -->
+        <!--     <!--End Pricing Block--> 
+        <!--     } -->
+        <!--     @case ('engagement'){ -->
+        <!--     <!--Pricing Block--> 
+        <!--     <div class="pricing-block featured col-3 wow fadeInUp" data-wow-delay="0.6s"> -->
+        <!--         <div class="pricing-block-content"> -->
+        <!--             <h3>Student</h3> -->
+        <!--             <p class="pricing-sub">Most popular choice</p> -->
+        <!--             <div class="pricing"> -->
+        <!--                 <div class="price"><span>$</span>29</div> -->
+        <!--                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
+        <!--             </div> -->
+        <!--             <ul> -->
+        <!--                 <li>15 Downloads</li> -->
+        <!--                 <li>5 Extensions</li> -->
+        <!--                 <li>Tutorials with Files</li> -->
+        <!--                 <li>Forum Support</li> -->
+        <!--                 <li>2 years free updates</li> -->
+        <!--             </ul> -->
+        <!--             <a href="#" class="button">BUY TODAY</a> -->
+        <!--         </div> -->
+        <!--     </div> -->
+        <!--     <!--End Pricing Block-->
+        <!--     } -->
+        <!--     @case ('event') { -->
+        <!--     <!--Pricing Block--> 
+        <!--     <div class="pricing-block col-3 wow fadeInUp" data-wow-delay="0.8s"> -->
+        <!--         <div class="pricing-block-content"> -->
+        <!--             <h3>Business</h3> -->
+        <!--             <p class="pricing-sub">For the whole team</p> -->
+        <!--             <div class="pricing"> -->
+        <!--                 <div class="price"><span>$</span>49</div> -->
+        <!--                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
+        <!--             </div> -->
+        <!--             <ul> -->
+        <!--                 <li>Unlimited Downloads</li> -->
+        <!--                 <li>Unlimited Extensions</li> -->
+        <!--                 <li>HD Video Tutorials</li> -->
+        <!--                 <li>Chat Support</li> -->
+        <!--                 <li>Lifetime free updates</li> -->
+        <!--             </ul> -->
+        <!--             <a href="#" class="button">BUY TODAY</a> -->
+        <!--         </div> -->
+        <!--     </div> -->
+        <!--     <!--End Pricing Block-->
+        <!--     } -->
+        <!--     } -->
+        
 
     </div>
 </section>
