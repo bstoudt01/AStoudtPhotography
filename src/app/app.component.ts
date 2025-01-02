@@ -8,9 +8,9 @@ import { NavComponent } from './components/nav/nav.component';
   selector: 'app-root',
   imports: [RouterOutlet, FooterComponent, NavComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  standalone: true
 })
 export class AppComponent {
   title = 'aStoudtPhotography';
 }
- 

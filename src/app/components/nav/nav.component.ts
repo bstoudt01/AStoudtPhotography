@@ -4,7 +4,8 @@ import {RouterLink, RouterLinkActive} from '@angular/router'
   selector: 'app-nav',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './nav.component.html',
-  styleUrl: './nav.component.css'
+  styleUrl: './nav.component.css',
+  standalone: true
 })
 export class NavComponent {
 

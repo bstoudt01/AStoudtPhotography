@@ -835,7 +835,7 @@ h6 {
 /* Icon Left*/
 
 .icon-left .icon {
-    left: 15;
+    left: 15px;
 }
 
 .icon-left .icon-block-description {
@@ -845,7 +845,7 @@ h6 {
 /* Icon Right */
 
 .icon-right .icon {
-    right: 15;
+    right: 15px;
 }
 
 .icon-right .icon-block-description {
@@ -1396,8 +1396,7 @@ blockquote {
 .client-overlay {
     background: rgba(0, 0, 0, 0.8);
     position: absolute;
-    top;
-    0;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
@@ -1486,7 +1485,7 @@ blockquote {
 .pricing  p {
     font-style:italic;
     color:#b4b4b4;
-    line-height:auto;
+    line-height:normal;
     margin:0;
 }
 
